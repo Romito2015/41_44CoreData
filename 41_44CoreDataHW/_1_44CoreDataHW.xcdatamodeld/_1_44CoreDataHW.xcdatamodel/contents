@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="RSCourse" representedClassName="RSCourse" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameOfTheCourse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="professors" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RSUser" inverseName="coursesToProfess" inverseEntity="RSUser" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RSUser" inverseName="coursesToStudy" inverseEntity="RSUser" syncable="YES"/>
+    </entity>
+    <entity name="RSUser" representedClassName="RSUser" syncable="YES">
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacher" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="coursesToProfess" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RSCourse" inverseName="professors" inverseEntity="RSCourse" syncable="YES"/>
+        <relationship name="coursesToStudy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RSCourse" inverseName="students" inverseEntity="RSCourse" syncable="YES"/>
+        <fetchedProperty name="workWithCourses" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="RSUser" predicateString="teacher = YES"/>
+        </fetchedProperty>
+    </entity>
+    <elements>
+        <element name="RSCourse" positionX="144" positionY="-10" width="128" height="118"/>
+        <element name="RSUser" positionX="421" positionY="-17" width="128" height="161"/>
+    </elements>
 </model>

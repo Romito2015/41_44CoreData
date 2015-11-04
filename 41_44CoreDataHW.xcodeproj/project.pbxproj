@@ -22,6 +22,15 @@
 		B331CB551BDE73B000107876 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B331CB391BDE73AF00107876 /* CoreData.framework */; };
 		B331CB5D1BDE73B000107876 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B331CB5B1BDE73B000107876 /* InfoPlist.strings */; };
 		B331CB5F1BDE73B000107876 /* _1_44CoreDataHWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B331CB5E1BDE73B000107876 /* _1_44CoreDataHWTests.m */; };
+		B331CB691BDE73E300107876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B331CB681BDE73E300107876 /* Main.storyboard */; };
+		B336B1881BE24F3E003D9D5E /* RSFetchCoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B336B1871BE24F3E003D9D5E /* RSFetchCoreDataController.m */; };
+		B336B18C1BE25140003D9D5E /* RSUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B336B18B1BE25140003D9D5E /* RSUserController.m */; };
+		B33B70B11BDFCDAD0096280C /* RSSharedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B33B70B01BDFCDAD0096280C /* RSSharedManager.m */; };
+		B359A7681BE8F16200FF9DE1 /* RSCoursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = B359A7671BE8F16200FF9DE1 /* RSCoursesController.m */; };
+		B359A7841BE94B5400FF9DE1 /* RSCreateCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B359A7831BE94B5400FF9DE1 /* RSCreateCourseController.m */; };
+		B359A78D1BE95F0F00FF9DE1 /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B359A78C1BE95F0F00FF9DE1 /* RSUser.m */; };
+		B359A7901BE95F1000FF9DE1 /* RSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = B359A78F1BE95F1000FF9DE1 /* RSCourse.m */; };
+		B3DF07E31BDE81F000AC2CCE /* RSCreateUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3DF07E21BDE81F000AC2CCE /* RSCreateUserController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,23 @@
 		B331CB5A1BDE73B000107876 /* 41_44CoreDataHWTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "41_44CoreDataHWTests-Info.plist"; sourceTree = "<group>"; };
 		B331CB5C1BDE73B000107876 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B331CB5E1BDE73B000107876 /* _1_44CoreDataHWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _1_44CoreDataHWTests.m; sourceTree = "<group>"; };
+		B331CB681BDE73E300107876 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B336B1861BE24F3E003D9D5E /* RSFetchCoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSFetchCoreDataController.h; sourceTree = "<group>"; };
+		B336B1871BE24F3E003D9D5E /* RSFetchCoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSFetchCoreDataController.m; sourceTree = "<group>"; };
+		B336B18A1BE25140003D9D5E /* RSUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUserController.h; sourceTree = "<group>"; };
+		B336B18B1BE25140003D9D5E /* RSUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUserController.m; sourceTree = "<group>"; };
+		B33B70AF1BDFCDAD0096280C /* RSSharedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSharedManager.h; sourceTree = "<group>"; };
+		B33B70B01BDFCDAD0096280C /* RSSharedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSharedManager.m; sourceTree = "<group>"; };
+		B359A7661BE8F16200FF9DE1 /* RSCoursesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSCoursesController.h; path = ../RSCoursesController.h; sourceTree = "<group>"; };
+		B359A7671BE8F16200FF9DE1 /* RSCoursesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSCoursesController.m; path = ../RSCoursesController.m; sourceTree = "<group>"; };
+		B359A7821BE94B5400FF9DE1 /* RSCreateCourseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCreateCourseController.h; sourceTree = "<group>"; };
+		B359A7831BE94B5400FF9DE1 /* RSCreateCourseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCreateCourseController.m; sourceTree = "<group>"; };
+		B359A78B1BE95F0F00FF9DE1 /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
+		B359A78C1BE95F0F00FF9DE1 /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
+		B359A78E1BE95F1000FF9DE1 /* RSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCourse.h; sourceTree = "<group>"; };
+		B359A78F1BE95F1000FF9DE1 /* RSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCourse.m; sourceTree = "<group>"; };
+		B3DF07E11BDE81F000AC2CCE /* RSCreateUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCreateUserController.h; sourceTree = "<group>"; };
+		B3DF07E21BDE81F000AC2CCE /* RSCreateUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCreateUserController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +143,13 @@
 			children = (
 				B331CB441BDE73AF00107876 /* RSAppDelegate.h */,
 				B331CB451BDE73AF00107876 /* RSAppDelegate.m */,
+				B33B70AF1BDFCDAD0096280C /* RSSharedManager.h */,
+				B33B70B01BDFCDAD0096280C /* RSSharedManager.m */,
+				B331CB681BDE73E300107876 /* Main.storyboard */,
+				B336B18E1BE26315003D9D5E /* DataModels */,
+				B359A7811BE8F54E00FF9DE1 /* CreationControllers */,
+				B336B18D1BE25145003D9D5E /* Controllers */,
+				B336B1891BE24F58003D9D5E /* CoreData */,
 				B331CB4A1BDE73AF00107876 /* Images.xcassets */,
 				B331CB471BDE73AF00107876 /* _1_44CoreDataHW.xcdatamodeld */,
 				B331CB3C1BDE73AF00107876 /* Supporting Files */,
@@ -151,6 +184,48 @@
 				B331CB5B1BDE73B000107876 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B336B1891BE24F58003D9D5E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B336B1861BE24F3E003D9D5E /* RSFetchCoreDataController.h */,
+				B336B1871BE24F3E003D9D5E /* RSFetchCoreDataController.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		B336B18D1BE25145003D9D5E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B336B18A1BE25140003D9D5E /* RSUserController.h */,
+				B336B18B1BE25140003D9D5E /* RSUserController.m */,
+				B359A7661BE8F16200FF9DE1 /* RSCoursesController.h */,
+				B359A7671BE8F16200FF9DE1 /* RSCoursesController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B336B18E1BE26315003D9D5E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				B359A78B1BE95F0F00FF9DE1 /* RSUser.h */,
+				B359A78C1BE95F0F00FF9DE1 /* RSUser.m */,
+				B359A78E1BE95F1000FF9DE1 /* RSCourse.h */,
+				B359A78F1BE95F1000FF9DE1 /* RSCourse.m */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		B359A7811BE8F54E00FF9DE1 /* CreationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3DF07E11BDE81F000AC2CCE /* RSCreateUserController.h */,
+				B3DF07E21BDE81F000AC2CCE /* RSCreateUserController.m */,
+				B359A7821BE94B5400FF9DE1 /* RSCreateCourseController.h */,
+				B359A7831BE94B5400FF9DE1 /* RSCreateCourseController.m */,
+			);
+			name = CreationControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B331CB691BDE73E300107876 /* Main.storyboard in Resources */,
 				B331CB401BDE73AF00107876 /* InfoPlist.strings in Resources */,
 				B331CB4B1BDE73AF00107876 /* Images.xcassets in Resources */,
 			);
@@ -250,8 +326,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B331CB491BDE73AF00107876 /* _1_44CoreDataHW.xcdatamodeld in Sources */,
+				B359A7901BE95F1000FF9DE1 /* RSCourse.m in Sources */,
+				B359A78D1BE95F0F00FF9DE1 /* RSUser.m in Sources */,
+				B33B70B11BDFCDAD0096280C /* RSSharedManager.m in Sources */,
+				B336B1881BE24F3E003D9D5E /* RSFetchCoreDataController.m in Sources */,
+				B359A7681BE8F16200FF9DE1 /* RSCoursesController.m in Sources */,
+				B3DF07E31BDE81F000AC2CCE /* RSCreateUserController.m in Sources */,
+				B359A7841BE94B5400FF9DE1 /* RSCreateCourseController.m in Sources */,
 				B331CB421BDE73AF00107876 /* main.m in Sources */,
 				B331CB461BDE73AF00107876 /* RSAppDelegate.m in Sources */,
+				B336B18C1BE25140003D9D5E /* RSUserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +532,7 @@
 				B331CB641BDE73B000107876 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B331CB651BDE73B000107876 /* Build configuration list for PBXNativeTarget "41_44CoreDataHWTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +541,7 @@
 				B331CB671BDE73B000107876 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
