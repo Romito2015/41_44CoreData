@@ -9,9 +9,11 @@
 #import "RSFetchCoreDataController.h"
 #import "RSCourse.h"
 #import "RSUser.h"
+#import "RSCheckController.h"
 
 @interface RSCreateCourseController : RSFetchCoreDataController
 
 @property (strong ,nonatomic) RSCourse *course;
+- (IBAction)buttonSave:(UIBarButtonItem *)sender;
 
 @end

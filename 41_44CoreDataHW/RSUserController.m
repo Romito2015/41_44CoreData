@@ -25,6 +25,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Users";
+    self.tableView.allowsMultipleSelection = YES;
+    //[self.tableView setEditing:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

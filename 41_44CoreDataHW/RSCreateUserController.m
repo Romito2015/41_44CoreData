@@ -7,7 +7,7 @@
 //
 
 #import "RSCreateUserController.h"
-
+#import "RSFetchCoreDataController.h"
 
 @interface RSCreateUserController () 
 
@@ -109,6 +109,7 @@ static int numberofPlaceholders = 3;
     } else if (indexPath.section == 2 ) {
         
         cell.textLabel.text = @"Course will be here";
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     
     return cell;
@@ -121,10 +122,10 @@ static int numberofPlaceholders = 3;
 {
     switch (segment.selectedSegmentIndex) {
         case 0:{
-            self.tempUserType = RSUserTypeStudent;
+            self.tempUserType = RSDataTypeStudent;
             break;}
         case 1:{
-            self.tempUserType = RSUserTypeTeacher;
+            self.tempUserType = RSDataTypeTeacher;
             break;}
     }
 }
@@ -209,7 +210,7 @@ static int numberofPlaceholders = 3;
     
     self.segmentedUserType = [[UISegmentedControl alloc] initWithItems:segmentedItems];
     self.segmentedUserType.frame = CGRectMake(20,7, 280, 30);
-    self.segmentedUserType.selectedSegmentIndex = self.user.teacher ? [self.user.teacher boolValue] : RSUserTypeStudent;
+    self.segmentedUserType.selectedSegmentIndex = self.user.teacher ? [self.user.teacher boolValue] : RSDataTypeStudent;
     [self.segmentedUserType addTarget:self action:@selector(segmentedControlValueDidChange:) forControlEvents:UIControlEventValueChanged];
     
 }

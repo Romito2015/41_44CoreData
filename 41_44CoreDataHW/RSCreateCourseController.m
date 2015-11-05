@@ -11,7 +11,8 @@
 @interface RSCreateCourseController ()
 
 @property (strong, nonatomic) NSArray *arrayOfTextFields;
-@property (strong, nonatomic) NSArray *studentsDataArray;
+
+
 
 @end
 
@@ -32,31 +33,18 @@ static int numberofPlaceholders = 3;
     // Do any additional setup after loading the view.
     
     NSMutableArray * tempTextFields = [NSMutableArray array];
+    
     for (int i = 0; i < numberofPlaceholders; i++) {
+        
         [tempTextFields addObject:[self createTextFieldForRow:i]];
     }
     
     self.arrayOfTextFields = tempTextFields;
     
-    
-    if (self.course != nil) {
-        //self.nameTextField.text = self.course.name;
-        //self.subjectTextField.text = self.course.subject;
-        //self.departmentTextField.text = self.course.department;
-        
-    } else {
-        self.course = [NSEntityDescription insertNewObjectForEntityForName:@"RSCourse" inManagedObjectContext:[[RSSharedManager sharedManager] managedObjectContext]];
-    }
-    
-    
-    
-    self.studentsDataArray = [NSArray array];
-    self.studentsDataArray = [[self.course students] allObjects];
-    
 }
 
 #pragma mark - Fetched results controller
-
+// Getting the students fom these course
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
@@ -65,19 +53,21 @@ static int numberofPlaceholders = 3;
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"RSCourse" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"RSUser" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *courseNameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"nameOfTheCourse" ascending:YES];
+    NSSortDescriptor *firstNameSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     
     
-    NSArray *sortDescriptors = @[courseNameSortDescriptor];
+    NSArray *sortDescriptors = @[firstNameSortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"students == %@",self.st]
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
@@ -97,14 +87,12 @@ static int numberofPlaceholders = 3;
 }
 
 
-#pragma mark - UITableViewDataSourse
-
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return [[self.fetchedResultsController sections] count] + 2;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -118,10 +106,8 @@ static int numberofPlaceholders = 3;
         
     } else if (section == 2) {
         
-        return [self.studentsDataArray count];
-        
+        return 5;//[self.studentsDataArray count];
     }
-    
     return 0;
 }
 
@@ -142,14 +128,11 @@ static int numberofPlaceholders = 3;
                 
                 textField.text = self.course.subject;
                 
-                
             } else if (textField.tag == 2) {
                 
                 textField.text = self.course.branch;
-                
             }
         }
-        
         
         [cell addSubview:textField];
         
@@ -164,22 +147,28 @@ static int numberofPlaceholders = 3;
         cell.textLabel.text = @"User will be here";
     }
 
-    
-    
-    
-    
-    if ([self.studentsDataArray count] != 0) {
+    /*
+     if ([self.studentsDataArray count] != 0) {
         
         RSUser *user = [self.studentsDataArray objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@, %@",user.firstName, user.lastName];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
     }
-    
-    
-    
-    
+     */
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 1 & indexPath.row == 0) {
+        
+        RSCheckController *checkVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RSCheckController"];
+        checkVC.dataType = RSDataTypeStudent;
+        [self.navigationController pushViewController:checkVC animated:YES];
+    }
+}
+
 
 #pragma mark - UITextFieldDelegate
 
@@ -199,10 +188,10 @@ static int numberofPlaceholders = 3;
     }
     
     return YES;
-    
 }
 
-#pragma mark - create elements methods
+
+#pragma mark - Create elements methods
 
 - (UITextField *) createTextFieldForRow:(NSInteger)row {
     
@@ -219,22 +208,41 @@ static int numberofPlaceholders = 3;
 }
 
 
+#pragma mark - Actions
+
+- (IBAction)buttonSave:(UIBarButtonItem *)sender {
+    
+    if (!self.course) {
+        self.course = [NSEntityDescription insertNewObjectForEntityForName:@"RSCourse"
+                                                    inManagedObjectContext:[RSSharedManager sharedManager].managedObjectContext];
+        
+    }
+    
+    for (UITextField *textField in self.arrayOfTextFields) {
+        
+        if (textField.tag == 0) {
+            self.course.nameOfTheCourse = textField.text;
+        } else if (textField.tag == 1) {
+            self.course.subject = textField.text;
+        } else if (textField.tag == 2) {
+            self.course.branch = textField.text;
+        }
+    }
+    
+    NSError *error = nil;
+    
+    if (![[RSSharedManager sharedManager].managedObjectContext save:&error]) {
+        NSLog(@"%@", [error localizedDescription]);
+    } else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

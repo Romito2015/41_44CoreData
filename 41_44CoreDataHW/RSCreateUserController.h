@@ -10,13 +10,6 @@
 #import "RSSharedManager.h"
 #import "RSUser.h"
 
-typedef enum {
-    
-    RSUserTypeStudent = 0,
-    RSUserTypeTeacher = 1
-    
-} RSUserType;
-
 @interface RSCreateUserController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) UITextField *textField;

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "RSSharedManager.h"
+
+typedef enum {
+    RSDataTypeStudent = 0,
+    RSDataTypeTeacher = 1,
+    RSDataTypeCourse  = 2
+
+} RSDataType;
+
 @interface RSFetchCoreDataController : UITableViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
